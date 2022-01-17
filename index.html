@@ -27,7 +27,7 @@
     <!-- Navbar -->
     <nav id="navbar">
       <div class="navbar__logo">
-        <img class="logo" src="imgs/favicon.png" />
+        <img class="logo" src="imgs/favicon.png" / height="22" width="66">
         <a href="#">SW</a>
       </div>
       <ul class="navbar__menu">
@@ -41,7 +41,13 @@
 
     <!-- Home -->
     <section id="home">
-      <img src="imgs/profile.png" alt="SeungOk's photo" class="home__profile" />
+      <img
+        src="imgs/profile.png"
+        alt="SeungOk's photo"
+        height="22"
+        width="66"
+        class="home__profile"
+      />
       <h1 class="home__title">Hello, <br />I'm Junior Developer</h1>
       <h2 class="home__subtitle">
         백앤드와 프론트앤드를 넘나들며 발전해나가는 주니어 개발자 (강조하고 싶은
@@ -51,7 +57,60 @@
     </section>
 
     <!-- About -->
-    <section id="about"></section>
+    <section id="about">
+      <h1 class="about__title">About me</h1>
+      <h2 class="about__subtitle">나에 대한 설명</h2>
+      <div class="about__skack">
+        <div class="stack">
+          <div class="stack__icon">
+            <i class="fab fa-html5"></i>
+          </div>
+          <div class="stack__title">Front end</div>
+          <div class="stack__subtitle">HTML, CSS, <br />JAVAASCRIPT</div>
+        </div>
+
+        <div class="stack">
+          <div class="stack__icon">
+            <img src="imgs/certificate.png" height="22" width="66"
+            alt="SeungOk's Certificate" / class="stack__icon__logo">
+          </div>
+          <div class="stack__title">자격증</div>
+          <div class="stack__subtitle">자격증 설명</div>
+        </div>
+
+        <div class="stack">
+          <div class="stack__icon">
+            <i class="fab fa-java"></i>
+          </div>
+          <div class="stack__title">백앤드</div>
+          <div class="stack__subtitle">백앤드 설명</div>
+        </div>
+      </div>
+      <div class="about__schools">
+        <div class="school">
+          <img
+            src="imgs/university.png"
+            alt="school__logo"
+            height="22"
+            width="66"
+            class="school_logo"
+          />
+          <p class="school_name">평택대학교</p>
+          <p class="school_period">2021.02 졸업</p>
+        </div>
+        <div class="school">
+          <img
+            src="imgs/bitcamp.png"
+            alt="school__logo"
+            height="22"
+            width="66"
+            class="school_logo"
+          />
+          <p class="school_name">BIT camp</p>
+          <p class="school_period">6개월</p>
+        </div>
+      </div>
+    </section>
 
     <!-- Skills -->
     <section id="skills"></section>
