@@ -36,3 +36,32 @@
   /* 패딩을 줬을 때  width와 height가 그 패딩을 포함해도 
   동일한 높이와 넓이가 되도록*/
 }
+
+/* Typography */
+h1 {
+  font-size: var(--font-large);
+  font-weight: var(--weight-bold);
+  color: var(--color-black);
+  margin: 20px 0;
+}
+
+h2 {
+  font-size: var(--font-medium);
+  font-weight: var(--weight-medium);
+  color: var(--color-black);
+  margin: 10px 0;
+}
+
+h3 {
+  font-size: var(--font-regular);
+  font-weight: var(--weight-regular);
+  color: var(--color-black);
+  margin: 10px 0;
+}
+
+p {
+  font-size: var(--font-regular);
+  font-weight: var(--weight-regular);
+  color: var(--color-black);
+  margin: 10px 0;
+}
