@@ -28,6 +28,7 @@
   /* 구글 폰트에서 선택한 3가지 (Roboto) */
 
   /* Size */
+  --size-border-radius: 40px;
 }
 
 /* Universal tags */
@@ -64,4 +65,75 @@ p {
   font-weight: var(--weight-regular);
   color: var(--color-black);
   margin: 10px 0;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-white);
+}
+
+ul {
+  padding-left: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/* Navbar */
+#navbar {
+  display: flex;
+  /* 수평 정렬 */
+  justify-content: space-between;
+  /* 박스 간격 떨어지도록 하기 위해 */
+  background-color: var(--color-blue);
+  /* 백그라운드 색상 파랑 */
+  align-items: center;
+  /* justify-content는 수평정렬, 반대인 수직으로 중앙 정렬하기위해 */
+  color: var(--color-white);
+  /* 글자 색상 하얀색 */
+  padding: 16px;
+  /* padding값 위 아래 좌 우 16px */
+}
+
+.navbar__logo {
+  display: flex;
+  /* 아이템 수평 정렬 */
+  font-size: var(--font-medium);
+  /* 폰트 사이즈 28px (두번째로 큼) */
+  font-weight: var(--weight-bold);
+  /* 폰트 굵기 700 (제일 굵음) */
+  align-items: center;
+  /* display : flex로 인해 중심축은 수평이고 수직으로 중앙 정렬하기 위해 사용 */
+}
+
+.navbar__menu {
+  display: flex;
+  /* 아이템 수평정렬 */
+}
+
+.navbar__menu__item {
+  padding: 8px 12px;
+  /* padding 위 아래 8px 좌 우 12px씩 주기 */
+  margin: 0 4px;
+  /* margin 위 아래 0 좌 우 4px씩 주기 */
+  cursor: pointer;
+  /* 아이템에 커서 올리면 손 모양 나오기 */
+}
+
+.navbar__menu__item.active {
+  border: 2px solid var(--color-white);
+  /* 활성화된 아이템 굵기를 2px, 색상은 하얀색 */
+  border-radius: var(--size-border-radius);
+  /* 활성화된 아이템 굵기를 40px만큼 깎아서 보이기 */
+}
+
+.navbar__menu__item:hover {
+  background-color: var(--color-dark-pink);
+  /* 커서 올리는 아이템 백그라운드 색상을 어두운 분홍으로 변경 */
+  border-radius: var(--size-border-radius);
+  /* 커서 올리는 아이템 굵기를 40px만큼 깎아서 보이기 */
 }
