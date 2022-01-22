@@ -9,7 +9,7 @@
   --color-dark-grey: #4d4d4d;
   --color-grey: #616161;
   --color-light-grey: #7c7979;
-  --color-blue: #73aace;
+  --color-dark-blue: #63869d;
   --color-yellow: #fff7d1;
   --color-orange: #feb546;
   --color-black: #000000;
@@ -36,6 +36,27 @@
   box-sizing: border-box;
   /* 패딩을 줬을 때  width와 height가 그 패딩을 포함해도 
   동일한 높이와 넓이가 되도록*/
+}
+
+button {
+  background-color: transparent;
+  /* 버튼 배경색 제거 */
+  cursor: pointer;
+  /* 커서 올리면 손 모양 나오게 */
+  border: none;
+  /* 아이템 굵기 제거 */
+  outline: none;
+  /* 아이템 아웃라인(굵기 외부, 너비는 레이아웃 관여 안함) 제거 */
+  font-family: "Roboto", sans-serif;
+  /* button 폰트 정의 */
+  /* button,input 등 form 태그는 body에서 정의한 폰트 CSS값 상속 x */
+}
+
+button:hover {
+  background: var(--color-dark-pink);
+  /* 커서 올리는 아이템 백그라운드 색상 다크 분홍으로 변경 */
+  border-radius: var(--size-border-radius);
+  /* 굵기는 40px만큼 깎아서 보이게 */
 }
 
 /* Typography */
@@ -88,15 +109,19 @@ ul {
   display: flex;
   /* 수평 정렬 */
   justify-content: space-between;
-  /* 박스 간격 떨어지도록 하기 위해 */
-  background-color: var(--color-blue);
-  /* 백그라운드 색상 파랑 */
+  /* 박스 간격 떨어지게 */
   align-items: center;
-  /* justify-content는 수평정렬, 반대인 수직으로 중앙 정렬하기위해 */
-  color: var(--color-white);
-  /* 글자 색상 하얀색 */
+  /* 중심축이 수평이므로 반대인 수직으로 중앙 정렬 */
   padding: 16px;
-  /* padding값 위 아래 좌 우 16px */
+  /* 상 우 하 좌 16px */
+  position: sticky;
+  /* 스크롤시 주어진 위치에 고정 (위치값 필수 지정) */
+  top: 0;
+  /* sticky 위치값 0 */
+  background-color: var(--color-dark-blue);
+  /* 백그라운드 색상 파랑 */
+  color: var(--color-white);
+  /* 글자 색상 하양 */
 }
 
 .navbar__logo {
@@ -136,4 +161,52 @@ ul {
   /* 커서 올리는 아이템 백그라운드 색상을 어두운 분홍으로 변경 */
   border-radius: var(--size-border-radius);
   /* 커서 올리는 아이템 굵기를 40px만큼 깎아서 보이기 */
+}
+
+/* Home */
+#home {
+  background: url("imgs/Home/background.png") center/cover;
+  /* 백그라운드 이미지 지정 */
+  /* 웹 페이지가 늘어나면 이미지도 맞춰서 중앙 부분이 늘어나게*/
+  padding: 80px;
+  /* 상 하 좌 우 80px */
+  text-align: center;
+  /* 모든 아이템 중간 정렬 */
+  border-top: thick double var(--color-dark-white);
+  /* 윗부분 굵기 스타일 thick double 색상 dark-white */
+}
+
+.home__profile {
+  width: 300px;
+  height: 300px;
+  /* 이미지 너비, 높이 300px */
+  border-radius: 40%;
+  /* 이미지 40%만큼 동그랗게 */
+  border: 3px solid var(--color-light-white);
+  /* 이미지 테두리 굵기 3px, 색상은 light white */
+}
+
+.home__title,
+.home__subtitle {
+  color: var(--color-white);
+  /* 글자 색상 white */
+}
+
+.home__contact {
+  color: var(--color-white);
+  /* 색상 하양 */
+  font-size: var(--font-regular);
+  /* 사이즈 regulrar */
+  font-weight: var(--weight-bold);
+  /* 굵기 bold */
+  padding: 12px;
+  /* 상 우 하 좌 12px */
+  margin: 35px;
+  /* 상 우 하 좌 35px */
+  border: 3px solid var(--color-dark-white);
+  /* 굵기 3px 색상 dark-white */
+  border-radius: var(--size-border-radius);
+  /* 굵기 40px 깎아서 보이게 */
+  outline: 4px dashed var(--color-light-white);
+  /* 아웃라인(굵기 외부) 4px 스타일 dashed 색상 light-white */
 }
