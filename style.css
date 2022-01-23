@@ -4,14 +4,12 @@
   --color-white: #ffffff;
   --color-light-white: #eeeeee;
   --color-dark-white: #bdbdbd;
-  --color-pink: #fe918d;
   --color-dark-pink: #ff6863;
-  --color-dark-grey: #4d4d4d;
-  --color-grey: #616161;
+  --color-dark-ivory: #f2f0f0;
   --color-light-grey: #7c7979;
+  --color-dark-grey: #4d4d4d;
   --color-dark-blue: #63869d;
-  --color-yellow: #fff7d1;
-  --color-orange: #feb546;
+  --color-sky-blue: #008dc7;
   --color-black: #000000;
 
   /* Font size */
@@ -173,7 +171,7 @@ ul {
   text-align: center;
   /* 모든 아이템 중간 정렬 */
   border-top: thick double var(--color-dark-white);
-  /* 윗부분 굵기 스타일 thick double 색상 dark-white */
+  /* 맨 윗부분 굵기 스타일 thick double 색상 dark-white */
 }
 
 .home__profile {
@@ -189,7 +187,7 @@ ul {
 .home__title,
 .home__subtitle {
   color: var(--color-white);
-  /* 글자 색상 white */
+  /* 폰트 색상 white */
 }
 
 .home__contact {
@@ -205,8 +203,142 @@ ul {
   /* 상 우 하 좌 35px */
   border: 3px solid var(--color-dark-white);
   /* 굵기 3px 색상 dark-white */
-  border-radius: var(--size-border-radius);
-  /* 굵기 40px 깎아서 보이게 */
+  border-radius: 20px;
+  /* 굵기 20px 깎아서 보이게 */
   outline: 4px dashed var(--color-light-white);
   /* 아웃라인(굵기 외부) 4px 스타일 dashed 색상 light-white */
+}
+
+/* About */
+#about {
+  background-color: var(--color-dark-ivory);
+  text-align: center;
+  /* 요소들 중앙 배치 */
+  max-width: 1200px;
+  /* 최대 너비 1100px (1000~1200px 권장) */
+  /* 줄어드는 웹 브라우저의 크기에 맞춰 요소의 너비도 자동으로 줄도록 (반응형) */
+  margin: 0 auto;
+  /* 상하 0 좌우 동일한 마진값 부여 */
+  border-top: thick double var(--color-dark-white);
+  /* 맨 윗부분 굵기 스타일 thick double 색상 dark-white */
+  padding: 80px;
+  /* 상 우 하 좌 80px */
+}
+
+.about__skack {
+  display: flex;
+  /* 요소 수평 정렬 */
+  justify-content: space-between;
+  /* 요소 사이 공간 부여 */
+  margin: 60px 0;
+  /* 상 하 60px 좌 우 0 */
+}
+
+.stack__icon {
+  width: 180px;
+  height: 180px;
+  /* 컨테이너 너비, 높이 180px */
+  line-height: 80px;
+  /* 아이콘 80px 위치에서 수직 정렬 */
+  font-size: 60px;
+  /* 아이콘 크기 60px  */
+  padding: 20px;
+  /* 상 우 하 좌 20px */
+  border-radius: 50%;
+  /* 굵기 50% 깎기 */
+  outline: 4px dashed var(--color-dark-blue);
+  /* outline 4px, 스타일 dashed */
+  margin-bottom: 16px;
+  /* 하 16px */
+  color: var(--color-sky-blue);
+}
+
+.stack__img {
+  width: 180px;
+  height: 180px;
+  /* 컨테이너 너비, 높이 180px */
+  line-height: 180px;
+  /* 아이콘 180px 위치에서 수직 정렬 */
+  padding: 20px;
+  /* 상 우 하 좌 20px */
+  border-radius: 50%;
+  /* 굵기 50% 깎기 */
+  outline: 4px dashed var(--color-dark-blue);
+  /* outline 4px, 스타일 dashed */
+  margin-bottom: 16px;
+  /* 하 16px */
+}
+
+.stack__img__logo {
+  width: 70px;
+  height: 70px;
+  /* 기술자격 이미지 너비, 높이 70px */
+}
+
+.stack__icon i {
+  transition: all 400ms cubic-bezier(0.88, 0.66, 1, 0.31);
+  /* 1s=1000ms */
+  /* 0.4초동안 모든 요소에 cubic-bezier만큼 애니메이션 적용 */
+  /* 커서 떼도 애니메이션 유지 위해 i:hover 안에 안넣음 */
+}
+
+.stack__icon i:hover {
+  color: var(--color-dark-pink);
+  cursor: pointer;
+  /* 아이템에 커서 올리면 손 모양 나오게 */
+  transform: scale(2) rotate(360deg);
+  /* 아이템에 커서  올리면 크기는 2배 커지면서
+  360도 회전 */
+}
+
+.stack__title,
+.stack__subtitle {
+  color: var(--color-dark-grey);
+}
+
+.stack__subtitle {
+  font-size: var(--font-regular);
+}
+
+/* About reactive */
+@media screen and (max-width: 1000px) {
+  #about {
+    background-color: var(--color-dark-white);
+    /* 브라우저 크기가 0~1000px일 때 색상 dark-white */
+  }
+}
+
+.school {
+  display: flex;
+  /* block 형식으로 수평 정렬 */
+  /* inline-flex는 inline 형식으로 수평 정렬 */
+  align-items: center;
+  /* flex 요소 교차축 중앙 정렬 (1줄) */
+  /* align-content : flex 요소 교차축 정렬 (2줄) */
+  flex-basis: 33.3%;
+  /* 공간 배분하기 전 기본 너비 33.3%씩 설정 */
+}
+
+.school__logo {
+  width: 60px;
+  height: 60px;
+  margin: 20px 30px;
+}
+
+.school__description {
+  text-align: left;
+  /* 글씨 왼쪽 정렬 */
+}
+
+.school__name,
+.school_period {
+  color: var(--color-dark-grey);
+}
+
+.school__name {
+  font-size: var(--font-regular);
+}
+
+.school__period {
+  font-size: var(--font-micro);
 }
