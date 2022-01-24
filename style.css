@@ -5,11 +5,13 @@
   --color-light-white: #eeeeee;
   --color-dark-white: #bdbdbd;
   --color-dark-pink: #ff6863;
-  --color-dark-ivory: #f2f0f0;
-  --color-light-grey: #7c7979;
+  --color-ivory: #f2f0f0;
+  --color-light-grey: #d3d3d3;
   --color-dark-grey: #4d4d4d;
   --color-dark-blue: #63869d;
   --color-sky-blue: #008dc7;
+  --color-bluish-green: #455e62;
+  --color-gunmetal: #4f6b7e;
   --color-black: #000000;
 
   /* Font size */
@@ -211,7 +213,7 @@ ul {
 
 /* About */
 #about {
-  background-color: var(--color-dark-ivory);
+  background-color: var(--color-ivory);
   text-align: center;
   /* 요소들 중앙 배치 */
   max-width: 1200px;
@@ -340,5 +342,89 @@ ul {
 }
 
 .school__period {
+  font-size: var(--font-micro);
+}
+
+/* Skills */
+#skills {
+  background-color: var(--color-light-grey);
+  max-width: 1200px;
+  /* 최대너비 1200px */
+  margin: auto;
+  /* 마진 값 자동 조절 */
+  text-align: center;
+  /* 텍스트 중앙 정렬 */
+  border-top: thick double var(--color-dark-white);
+  /* 맨 윗부분 굵기 스타일 thick double 색상 drak-white */
+}
+
+.skillset {
+  display: flex;
+  /* 요소 수평 정렬 */
+  color: var(--color-light-white);
+  /* 폰트 색 light-white */
+  margin: 20px 0;
+  /* 상하 20px 좌우 0 */
+  padding: 20px 40px;
+  /* 상하 20px 좌우 40px */
+}
+
+.skillset__title {
+  color: var(--color-white);
+  font-size: var(--font-medium);
+}
+
+.skillset__left {
+  flex-basis: 60%;
+  /* 부모 너비의 60%만큼 차지 */
+  background-color: var(--color-bluish-green);
+  /* 청록색 */
+}
+
+.graph {
+  display: flex;
+  /* 요소 수평 정렬 */
+  justify-content: space-around;
+  /* 요소 사이에 동일한 간격 주면서 첫번째와 마지막 요소는 여백 있게 */
+}
+
+.graph__bar {
+  position: relative;
+  height: 200px;
+  /* 그래프 높이 200px */
+  width: 30px;
+  /* 그래프 너비 30px */
+  background-color: var(--color-light-grey);
+  margin: auto;
+  /* block요소에서 text-align 사용 위해 */
+  text-align: center;
+  /* 중앙 정렬 */
+}
+
+.graph__value {
+  position: absolute;
+  /* position이 static이 아닌 부모 요소 기준 */
+  width: 100%;
+  /* 부모 요소 너비의 100% */
+  background-color: var(--color-dark-grey);
+  bottom: 0;
+  /* 위치 아래 0부터 시작 */
+}
+
+.graph__title,
+.graph__percent {
+  font-size: var(--font-micro);
+}
+
+.skillset__right {
+  flex-basis: 40%;
+  /* 부모 너비의 40%만큼 차지 */
+  background-color: var(--color-gunmetal);
+  /* 청회색 */
+}
+
+.tool li {
+  padding: 15px 0;
+  /* tool__list li 요소 padding 상하 15px 좌우 0 */
   font-size: var(--font-micro);
 }
