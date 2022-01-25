@@ -7,11 +7,14 @@
   --color-dark-pink: #ff6863;
   --color-ivory: #f2f0f0;
   --color-light-grey: #d3d3d3;
+  --color-medium-grey: #abaeb0;
   --color-dark-grey: #4d4d4d;
   --color-dark-blue: #63869d;
   --color-sky-blue: #008dc7;
+  --color-indigo: #00007a;
   --color-bluish-green: #455e62;
   --color-gunmetal: #4f6b7e;
+  --color-purple: #8300f0;
   --color-black: #000000;
 
   /* Font size */
@@ -122,6 +125,8 @@ ul {
   /* 백그라운드 색상 파랑 */
   color: var(--color-white);
   /* 글자 색상 하양 */
+  z-index: 1;
+  /* 배치 순서 결정, position이 static이 아닌 것만 적용 가능 */
 }
 
 .navbar__logo {
@@ -354,6 +359,7 @@ ul {
   /* 마진 값 자동 조절 */
   text-align: center;
   /* 텍스트 중앙 정렬 */
+  padding: 80px;
   border-top: thick double var(--color-dark-white);
   /* 맨 윗부분 굵기 스타일 thick double 색상 drak-white */
 }
@@ -363,8 +369,8 @@ ul {
   /* 요소 수평 정렬 */
   color: var(--color-light-white);
   /* 폰트 색 light-white */
-  margin: 20px 0;
-  /* 상하 20px 좌우 0 */
+  margin-top: 20px;
+  /* 상 20px */
   padding: 20px 40px;
   /* 상하 20px 좌우 40px */
 }
@@ -399,6 +405,7 @@ ul {
   /* block요소에서 text-align 사용 위해 */
   text-align: center;
   /* 중앙 정렬 */
+  border-radius: var(--size-border-radius);
 }
 
 .graph__value {
@@ -427,4 +434,135 @@ ul {
   padding: 15px 0;
   /* tool__list li 요소 padding 상하 15px 좌우 0 */
   font-size: var(--font-micro);
+}
+
+/* work__tab */
+#work {
+  text-align: center;
+  /* 중앙 정렬 */
+  max-width: 1200px;
+  /* 최대 너비 1200px */
+  margin: 0 auto;
+  /* margin 좌우 동일 여백 */
+  padding: 80px;
+  border-top: thick double var(--color-dark-white);
+  background-color: var(--color-medium-grey);
+}
+
+.work__tab {
+  margin: 40px;
+}
+
+.tab__btn {
+  border: 2px solid var(--color-black);
+  border-radius: var(--size-border-radius);
+  font-size: var(--font-regular);
+  color: var(--color-ivory);
+  padding: 4px 30px;
+}
+
+.tab__btn.active,
+.tab__btn:hover {
+  color: var(--color-indigo);
+  /* 요소가 active하거나 커서 올라가면 스타일 변경 */
+  font-weight: var(--weight-bold);
+  background-color: var(--color-dark-blue);
+}
+
+.tab__btn.active .work__count,
+.tab__btn:hover .work__count {
+  /* tab__btn이 active인 상태의 work__count와
+     tab__btn에 커서 올라갔을 때 work__count */
+  opacity: 1;
+  /* 투명도 1 */
+  top: 0;
+  left: 0;
+}
+
+.work__count {
+  border: 3px solid var(--color-purple);
+  border-radius: var(--size-border-radius);
+  color: var(--color-ivory);
+  display: inline-block;
+  /* span은 inline요소라서 박스 크기를 꽉 채우기 때문에
+  inline-block으로 변경*/
+  width: 25px;
+  height: 30px;
+  line-height: 30px;
+  /* line-height은 한줄만 수직 정렬할 때 사용 */
+  position: relative;
+  left: -180px;
+  top: -80px;
+  opacity: 0;
+  /* 투명도 0 */
+  transition: all 300ms cubic-bezier(0.95, 0.13, 0.61, 0.58);
+}
+
+/* work__project */
+.work__project {
+  display: flex;
+  flex-wrap: wrap;
+  /* 브라우저 사이즈가 줄어들면 아이템 사이즈는 안줄이고 다음 라인으로 넘김*/
+  justify-content: center;
+  /* 중앙 정렬 */
+}
+
+.project {
+  width: 200px;
+  height: 250px;
+  margin: 5px;
+  background-color: var(--color-light-grey);
+  position: relative;
+  /* 자식요소인 project__description에 absolute 지정 위해 */
+  display: flex;
+  justify-content: center;
+  /* 수평 중앙 정렬 */
+  align-items: center;
+  /* 수직 중앙 정렬 */
+}
+
+.project__img {
+  max-width: 100%;
+  /* 부모 너비의 100%만큼 */
+  max-height: 100%;
+  /* 부모 높이의 100%만큼 */
+  /* 조상인 work__project가 flex라서 가능 */
+}
+
+.project__description {
+  position: absolute;
+  /* project__description의 부모 요소에서 빠져나오기 위해 */
+  /* relative는 원래 자리 차지하면서 이동 */
+  /* 근접한 부모요소중 position이 static이 아닌 부모요소 기준*/
+  top: 0;
+  width: 100%;
+  height: 100%;
+  /* 부모 요소의 너비, 높이 100%만큼 */
+  background-color: var(--color-dark-pink);
+  display: flex;
+  /* 수평 정렬 */
+  flex-direction: column;
+  /* 아이템 열로 배치 */
+  justify-content: center;
+  /* 중심축이 열, 중간 정렬 */
+  opacity: 0;
+  /* 투명도 0 */
+  transform: translateY(500px);
+  transition: all 300ms cubic-bezier(0.9, 0.02, 0.49, 0.99);
+}
+
+.project:hover .project__description {
+  /* .project에 커서 올라오면 .project__description */
+  opacity: 0.7;
+  transform: translateY(0);
+}
+
+.project__description h3:after {
+  /* 가상클래스 */
+  /* project__description h3 다음에 올 것 적기 */
+  /* content 속성 필수 */
+  content: "- - - - - - - - - - - - - - - - ";
+  display: block;
+  /* 한줄씩 들어가도록 하기 위해 block 지정 */
+  margin-top: 10px;
 }
