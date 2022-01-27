@@ -44,6 +44,10 @@
         <li class="navbar__menu__item">Project</li>
         <li class="navbar__menu__item">Contact</li>
       </ul>
+      <!-- Toogle -->
+      <button class="navbar__toggle">
+        <i class="far fa-caret-square-down"></i>
+      </button>
     </nav>
 
     <!-- Home -->
@@ -55,56 +59,61 @@
       />
       <h1 class="home__title">Hello, <br />I'm Junior Developer</h1>
       <h2 class="home__subtitle">
-        백앤드와 프론트앤드를 넘나들며 발전해나가는 주니어 개발자
-        (강조하고 싶은 문장)
+        I love to see my imagination come to life and I'm not ashamed
+        to ask and learn
       </h2>
       <button class="home__contact">Contact Me</button>
     </section>
 
     <!-- About -->
-    <section id="about">
-      <h1>About me</h1>
-      <h2>나에 대한 설명</h2>
-      <!-- about__stacks -->
-      <div class="about__skack">
-        <div class="stack">
-          <div class="stack__icon">
-            <i class="fab fa-html5"></i>
-            <i class="fab fa-css3-alt"></i>
-            <i class="fab fa-js"></i>
+    <section id="about" class="section">
+      <div class="section__container">
+        <h1>About me</h1>
+        <h2>
+          I made the basics by studying CSS, HTML and JavaScript.<br />
+          Based on the results, I have studied React and
+          TypeScript.<br />
+          Also, I have tried to get various certifications.
+        </h2>
+        <!-- about__stacks -->
+        <div class="about__skack">
+          <div class="stack">
+            <div class="stack__icon">
+              <i class="fab fa-html5"></i>
+              <i class="fab fa-css3-alt"></i>
+              <i class="fab fa-js"></i>
+            </div>
+            <h2 class="stack__title">Front-end</h2>
+            <h3 class="stack__subtitle">
+              HTML, CSS, <br />JavaScript
+            </h3>
           </div>
-          <h2 class="stack__title">Front-end</h2>
-          <div class="stack__subtitle">
-            HTML, CSS, <br />JavaScript
+          <div class="stack">
+            <div class="stack__img">
+              <img src="imgs/About/certificate.png"
+              alt="Certificate__logo" / class="stack__img__logo">
+            </div>
+            <h2 class="stack__title">Certificate</h2>
+            <h3 class="stack__subtitle">
+              정보처리기사,
+              <br />컴퓨터활용능력1급, <br />
+              SQLD
+            </h3>
+          </div>
+          <div class="stack">
+            <div class="stack__icon">
+              <i class="fab fa-react"></i>
+              <i class="fab fa-vuejs"></i>
+              <i class="fab fa-angular"></i>
+            </div>
+            <h2 class="stack__title">React.js</h2>
+            <h3 class="stack__subtitle">
+              + TypeScript project ing...
+            </h3>
           </div>
         </div>
-        <div class="stack">
-          <div class="stack__img">
-            <img src="imgs/About/certificate.png"
-            alt="Certificate__logo" / class="stack__img__logo">
-          </div>
-          <h2 class="stack__title">Certificate</h2>
-          <div class="stack__subtitle">
-            정보처리기사,
-            <br />컴퓨터활용능력1급, <br />
-            SQLD
-          </div>
-        </div>
-        <div class="stack">
-          <div class="stack__icon">
-            <i class="fab fa-react"></i>
-            <i class="fab fa-vuejs"></i>
-            <i class="fab fa-angular"></i>
-          </div>
-          <h2 class="stack__title">React.js</h2>
-          <div class="stack__subtitle">
-            + TypeScript project ing...
-          </div>
-        </div>
-      </div>
-      <!-- about__schools -->
-      <div class="about__schools">
-        <div class="school">
+        <!-- about__school -->
+        <div class="about__school">
           <img
             src="imgs/About/university.png"
             alt="school__logo"
@@ -117,7 +126,7 @@
             <p class="school__period">2015 March - 2021 February</p>
           </div>
         </div>
-        <div class="school">
+        <div class="about__school">
           <img
             src="imgs/About/bitcamp.png"
             alt="school__logo"
@@ -132,7 +141,7 @@
     </section>
 
     <!-- Skills -->
-    <section id="skills">
+    <section id="skills" class="section">
       <h1 class="skills_title">Skills</h1>
       <h2 class="skills__subtitle">Skills & Tools</h2>
       <p class="skills__content">스킬 설명</p>
@@ -193,7 +202,7 @@
     </section>
 
     <!-- Work -->
-    <section id="work">
+    <section id="work" class="section">
       <h1>Project</h1>
       <h3>프로젝트 설명</h3>
       <!-- work__tab -->
@@ -296,7 +305,7 @@
     </section>
 
     <!-- Footer -->
-    <section id="footer">
+    <section id="footer" class="section">
       <h1 class="footer__title">Contact</h1>
       <div class="contact">
         <p class="contact__email">E-mail : qqkddi09@naver.com</p>

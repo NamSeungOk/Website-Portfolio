@@ -2,24 +2,23 @@
 :root {
   /* Color */
   --color-white: #ffffff;
-  --color-dark-pink: #ff6863;
-  --color-medium-blue: #63869d;
-  /* 여기까지 */
   --color-light-white: #eeeeee;
   --color-dark-white: #bdbdbd;
-  --color-dark-pink: #ff6863;
   --color-ivory: #f2f0f0;
-  --color-light-grey: #d3d3d3;
-  --color-medium-grey: #abaeb0;
-  --color-heavy-grey: #7d7a7a;
-  --color-dark-grey: #4d4d4d;
-  --color-dark-blue: #63869d;
+  --color-dark-pink: #ff6863;
+  --color-medium-blue: #63869d;
   --color-sky-blue: #008dc7;
+  --color-medium-grey: #abaeb0;
+  --color-dark-grey: #4d4d4d;
+  --color-black: #000000;
+  /* 여기까지 */
+  --color-light-grey: #d3d3d3;
+  --color-heavy-grey: #7d7a7a;
+  --color-dark-blue: #63869d;
   --color-indigo: #00007a;
   --color-bluish-green: #455e62;
   --color-gunmetal: #4f6b7e;
   --color-purple: #8300f0;
-  --color-black: #000000;
 
   /* Font size */
   --font-large: 48px;
@@ -113,6 +112,19 @@ ul {
   list-style: none;
 }
 
+/* Section */
+.section {
+  text-align: center;
+  border-top: thick double var(--color-dark-white);
+  padding: 80px;
+  /* 줄어드는 웹 브라우저의 크기에 맞춰 요소의 너비도 자동으로 줄도록 (반응형) */
+}
+
+.section__container {
+  max-width: 1200px;
+  margin: auto;
+}
+
 /* Navbar */
 #navbar {
   display: flex;
@@ -169,15 +181,27 @@ ul {
   border-radius: var(--size-border-radius);
 }
 
+/* navbar__toggle */
+.navbar__toggle {
+  position: absolute;
+  /* 기존 위치에서 빠져나오게 */
+  right: 32px;
+  top: 30px;
+  font-size: var(--font-medium);
+  color: var(--color-white);
+  display: none;
+  /* 평소에는 안보이게 */
+  /* opacity(투명도)는 안보여도 커서 올리면 클릭이 되기 때문에 사용안했음 */
+}
+
 /* Home */
 #home {
   background: url("imgs/Home/background.png") center/cover;
   /* 백그라운드 이미지 지정 */
   /* 웹 페이지가 늘어나면 이미지도 맞춰서 중앙 부분이 늘어나게*/
   padding: 80px;
-  /* 상 하 좌 우 80px */
   text-align: center;
-  /* 모든 아이템 중간 정렬 */
+  /* 중간 정렬 */
   border-top: thick double var(--color-dark-white);
   /* 맨 윗부분 굵기 스타일 thick double 색상 dark-white */
 }
@@ -189,30 +213,21 @@ ul {
   border-radius: 40%;
   /* 이미지 40%만큼 동그랗게 */
   border: 3px solid var(--color-light-white);
-  /* 이미지 테두리 굵기 3px, 색상은 light white */
 }
 
 .home__title,
 .home__subtitle {
   color: var(--color-white);
-  /* 폰트 색상 white */
 }
 
 .home__contact {
   color: var(--color-white);
-  /* 색상 하양 */
   font-size: var(--font-regular);
-  /* 사이즈 regulrar */
   font-weight: var(--weight-bold);
-  /* 굵기 bold */
   padding: 12px;
-  /* 상 우 하 좌 12px */
   margin: 35px;
-  /* 상 우 하 좌 35px */
   border: 3px solid var(--color-dark-white);
-  /* 굵기 3px 색상 dark-white */
   border-radius: 20px;
-  /* 굵기 20px 깎아서 보이게 */
   outline: 4px dashed var(--color-light-white);
   /* 아웃라인(굵기 외부) 4px 스타일 dashed 색상 light-white */
 }
@@ -220,26 +235,14 @@ ul {
 /* About */
 #about {
   background-color: var(--color-ivory);
-  text-align: center;
-  /* 요소들 중앙 배치 */
-  max-width: 1200px;
-  /* 최대 너비 1100px (1000~1200px 권장) */
-  /* 줄어드는 웹 브라우저의 크기에 맞춰 요소의 너비도 자동으로 줄도록 (반응형) */
-  margin: 0 auto;
-  /* 상하 0 좌우 동일한 마진값 부여 */
-  border-top: thick double var(--color-dark-white);
-  /* 맨 윗부분 굵기 스타일 thick double 색상 dark-white */
-  padding: 80px;
-  /* 상 우 하 좌 80px */
 }
 
 .about__skack {
   display: flex;
-  /* 요소 수평 정렬 */
+  /* 수평 정렬 */
   justify-content: space-between;
   /* 요소 사이 공간 부여 */
   margin: 60px 0;
-  /* 상 하 60px 좌 우 0 */
 }
 
 .stack__icon {
@@ -251,13 +254,10 @@ ul {
   font-size: 60px;
   /* 아이콘 크기 60px  */
   padding: 20px;
-  /* 상 우 하 좌 20px */
   border-radius: 50%;
-  /* 굵기 50% 깎기 */
   outline: 4px dashed var(--color-dark-blue);
   /* outline 4px, 스타일 dashed */
   margin-bottom: 16px;
-  /* 하 16px */
   color: var(--color-sky-blue);
 }
 
@@ -268,13 +268,10 @@ ul {
   line-height: 180px;
   /* 아이콘 180px 위치에서 수직 정렬 */
   padding: 20px;
-  /* 상 우 하 좌 20px */
   border-radius: 50%;
-  /* 굵기 50% 깎기 */
   outline: 4px dashed var(--color-dark-blue);
   /* outline 4px, 스타일 dashed */
   margin-bottom: 16px;
-  /* 하 16px */
 }
 
 .stack__img__logo {
@@ -308,17 +305,9 @@ ul {
   font-size: var(--font-regular);
 }
 
-/* About reactive */
-@media screen and (max-width: 1000px) {
-  #about {
-    background-color: var(--color-dark-white);
-    /* 브라우저 크기가 0~1000px일 때 색상 dark-white */
-  }
-}
-
-.school {
+.about__school {
   display: flex;
-  /* block 형식으로 수평 정렬 */
+  /* 수평 정렬 */
   /* inline-flex는 inline 형식으로 수평 정렬 */
   align-items: center;
   /* flex 요소 교차축 중앙 정렬 (1줄) */
@@ -335,7 +324,6 @@ ul {
 
 .school__description {
   text-align: left;
-  /* 글씨 왼쪽 정렬 */
 }
 
 .school__name,
@@ -354,15 +342,6 @@ ul {
 /* Skills */
 #skills {
   background-color: var(--color-light-grey);
-  max-width: 1200px;
-  /* 최대너비 1200px */
-  margin: auto;
-  /* 마진 값 자동 조절 */
-  text-align: center;
-  /* 텍스트 중앙 정렬 */
-  padding: 80px;
-  border-top: thick double var(--color-dark-white);
-  /* 맨 윗부분 굵기 스타일 thick double 색상 drak-white */
 }
 
 .skillset {
@@ -439,14 +418,6 @@ ul {
 
 /* work__tab */
 #work {
-  text-align: center;
-  /* 중앙 정렬 */
-  max-width: 1200px;
-  /* 최대 너비 1200px */
-  margin: 0 auto;
-  /* margin 좌우 동일 여백 */
-  padding: 80px;
-  border-top: thick double var(--color-dark-white);
   background-color: var(--color-medium-grey);
 }
 
@@ -571,10 +542,6 @@ ul {
 /* Footer */
 #footer {
   background-color: var(--color-heavy-grey);
-  padding: 80px;
-  text-align: center;
-  max-width: 1200px;
-  margin: auto;
   color: var(--color-white);
 }
 
@@ -597,4 +564,61 @@ ul {
 .footer__link i:hover {
   transform: scale(2) rotate(180deg);
   color: var(--color-white);
+}
+
+/* Responsive */
+@media screen and (max-width: 800px) {
+  /* media 쿼리가 800px 이하일 때 보여지는 것 */
+  /* Navbar */
+  .navbar__toggle {
+    display: block;
+    /* none으로 설정한 것을 다시 보이게 */
+  }
+
+  #navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar__menu {
+    flex-direction: column;
+    /* media 안에서는 display : flex는 상속됨 */
+    width: 100%;
+    text-align: center;
+    margin-top: 15px;
+    display: none;
+  }
+
+  /* About */
+  .about__skack {
+    flex-direction: column;
+    /* display : flex는 상속 */
+    align-items: center;
+  }
+
+  .stack {
+    margin-bottom: 30px;
+  }
+
+  /* Skills */
+  .skillset {
+    flex-direction: column;
+  }
+
+  /* Work */
+  #work {
+    background-color: var(--color-ivory);
+  }
+
+  .tab__btn {
+    margin-top: 15px;
+    width: 100%;
+    color: var(--color-black);
+    font-weight: var(--weight-bold);
+  }
+
+  .project {
+    flex-grow: 1;
+  }
 }
