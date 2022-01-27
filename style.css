@@ -432,8 +432,8 @@ ul {
 
 .tab__btn.active,
 .tab__btn:hover {
+  /* 아이템이 active하거나 커서 올라가면 스타일 변경 */
   color: var(--color-indigo);
-  /* 요소가 active하거나 커서 올라가면 스타일 변경 */
   font-weight: var(--weight-bold);
   background-color: var(--color-dark-blue);
 }
@@ -522,8 +522,8 @@ ul {
 
 .project:hover .project__description {
   /* .project에 커서 올라오면 .project__description */
-  opacity: 0.7;
-  transform: translateY(0);
+  opacity: 0.9;
+  transform: translateX(0);
 }
 
 .project__description h3:after {
