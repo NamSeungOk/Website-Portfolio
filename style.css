@@ -8,16 +8,16 @@
   --color-dark-pink: #ff6863;
   --color-medium-blue: #63869d;
   --color-sky-blue: #008dc7;
+  --color-light-grey: #d3d3d3;
   --color-medium-grey: #abaeb0;
   --color-dark-grey: #4d4d4d;
+  --color-gunmetal: #4f6b7e;
+  --color-bluish-green: #455e62;
   --color-black: #000000;
   /* 여기까지 */
-  --color-light-grey: #d3d3d3;
   --color-heavy-grey: #7d7a7a;
   --color-dark-blue: #63869d;
   --color-indigo: #00007a;
-  --color-bluish-green: #455e62;
-  --color-gunmetal: #4f6b7e;
   --color-purple: #8300f0;
 
   /* Font size */
@@ -255,7 +255,7 @@ ul {
   /* 아이콘 크기 60px  */
   padding: 20px;
   border-radius: 50%;
-  outline: 4px dashed var(--color-dark-blue);
+  outline: 4px dashed var(--color-medium-blue);
   /* outline 4px, 스타일 dashed */
   margin-bottom: 16px;
   color: var(--color-sky-blue);
@@ -269,7 +269,7 @@ ul {
   /* 아이콘 180px 위치에서 수직 정렬 */
   padding: 20px;
   border-radius: 50%;
-  outline: 4px dashed var(--color-dark-blue);
+  outline: 4px dashed var(--color-medium-blue);
   /* outline 4px, 스타일 dashed */
   margin-bottom: 16px;
 }
@@ -339,20 +339,17 @@ ul {
   font-size: var(--font-micro);
 }
 
-/* Skills */
-#skills {
+/* Skill */
+#skill {
   background-color: var(--color-light-grey);
 }
 
 .skillset {
   display: flex;
-  /* 요소 수평 정렬 */
+  /* 수평 정렬 */
   color: var(--color-light-white);
-  /* 폰트 색 light-white */
   margin-top: 20px;
-  /* 상 20px */
   padding: 20px 40px;
-  /* 상하 20px 좌우 40px */
 }
 
 .skillset__title {
@@ -369,7 +366,7 @@ ul {
 
 .graph {
   display: flex;
-  /* 요소 수평 정렬 */
+  /* 수평 정렬 */
   justify-content: space-around;
   /* 요소 사이에 동일한 간격 주면서 첫번째와 마지막 요소는 여백 있게 */
 }
@@ -601,7 +598,7 @@ ul {
     margin-bottom: 30px;
   }
 
-  /* Skills */
+  /* Skill */
   .skillset {
     flex-direction: column;
   }
