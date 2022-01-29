@@ -596,10 +596,6 @@ ul {
   }
 
   /* About */
-  #about {
-    background-color: var(--color-light-yellow);
-  }
-
   .about__skack {
     flex-direction: column;
     /* display : flex는 상속 */
@@ -612,7 +608,7 @@ ul {
 
   /* Skill */
   #skill {
-    background-color: var(--color-medium-yellow);
+    background-color: var(--color-light-yellow);
   }
 
   .skillset {
@@ -621,7 +617,7 @@ ul {
 
   /* Work */
   #work {
-    background-color: var(--color-dark-yellow);
+    background-color: var(--color-ivory);
   }
 
   .tab__btn {
