@@ -54,7 +54,7 @@ button {
   /* 아이템 굵기 제거 */
   outline: none;
   /* 아이템 아웃라인(굵기 외부, 너비는 레이아웃 관여 안함) 제거 */
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   /* button 폰트 정의 */
   /* button,input 등 form 태그는 body에서 정의한 폰트 CSS값 상속 x */
 }
@@ -97,7 +97,7 @@ p {
 
 body {
   margin: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   cursor: default;
   /* 텍스트 등에 cursor 올릴 때 기본값 */
 }
@@ -135,14 +135,24 @@ ul {
   align-items: center;
   /* 수직 중앙 정렬 */
   padding: 16px;
-  position: sticky;
+  position: fixed;
   /* 스크롤시 주어진 위치에 고정 (위치값 필수 지정) */
-  top: 0;
-  /* sticky 위치값 0 */
-  background-color: var(--color-medium-blue);
+  width: 100%;
+  /* 부모 너비의 100% */
+  background-color: transparent;
+  /* 투명색 */
   color: var(--color-white);
   z-index: 1;
   /* 배치 순서 결정, position이 static이 아닌 것만 적용 가능 */
+  transition: all 300ms cubic-bezier(0.94, 0.09, 0.93, 0.06);
+}
+
+#navbar.navbar--dark {
+  background-color: var(--color-medium-blue);
+}
+
+.navbar__img.reactive {
+  content: url(imgs/Favicon_Reactive.png);
 }
 
 .navbar__logo {
@@ -197,7 +207,7 @@ ul {
 
 /* Home */
 #home {
-  background: url("imgs/Home/background.png") center/cover;
+  background: url('imgs/Home/background.png') center/cover;
   /* 백그라운드 이미지 지정 */
   /* 웹 페이지가 늘어나면 이미지도 맞춰서 중앙 부분이 늘어나게*/
   padding: 80px;
@@ -531,7 +541,7 @@ ul {
   /* 가상클래스 */
   /* project__description h3 다음에 올 것 적기 */
   /* content 속성 필수 */
-  content: "- - - - - - - - - - - - - - - - ";
+  content: '- - - - - - - - - - - - - - - - ';
   display: block;
   /* 한줄씩 들어가도록 하기 위해 block 지정 */
   margin-top: 10px;
