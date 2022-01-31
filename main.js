@@ -37,13 +37,26 @@ logoButton.addEventListener('click', () => {
 // ------------------------------------------------------------------------------------
 
 // Home
-// "Contact Me" 버튼 클릭시 Contact 영역으로 이동
-const contactButton = document.querySelector('.home__contact');
-contactButton.addEventListener('click', () => {
+// "Contact Me" 버튼 클릭시 Footer 영역으로 이동
+const homeButton = document.querySelector('.home__contact');
+homeButton.addEventListener('click', () => {
   scrollIntoView('#footer');
 });
 
-// 공통부분 메서드 추출
+// 스크롤시 .home영역 점점 투명하게
+const homeDiv = document.querySelector('.home');
+const home_Height = homeDiv.getBoundingClientRect().height;
+document.addEventListener('scroll', () => {
+  if (window.scrollY <= home_Height) {
+    homeDiv.style.opacity = 1 - window.scrollY / home_Height;
+    homeButton.style.opacity = 1 - window.scrollY / home_Height;
+  } else {
+    homeDiv.style.opacity = 0.05;
+    homeButton.style.opacity = 0.05;
+  }
+});
+
+// Common Method
 function scrollIntoView(selector) {
   const scroll = document.querySelector(selector);
   scroll.scrollIntoView({ behavior: 'smooth' });
