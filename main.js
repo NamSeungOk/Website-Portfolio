@@ -16,12 +16,23 @@ window.addEventListener('scroll', () => {
 
 // 메뉴 선택시 해당 영역 이동
 const menu = document.querySelector('.navbar__menu');
-menu.addEventListener('click', (event) => {
+menu.addEventListener('click', () => {
   const target = event.target;
   const link = target.dataset.link;
   if (link == null) {
     return;
   }
-  const scroll = document.querySelector(link);
-  scroll.scrollIntoView({ behavior: 'smooth' });
+  scrollIntoView(link);
 });
+
+// Home "Contact Me" 버튼 클릭시 Contact 영역으로 이동
+const contactButton = document.querySelector('.home__contact');
+contactButton.addEventListener('click', () => {
+  scrollIntoView('#footer');
+});
+
+// 공통부분 메서드 추출
+function scrollIntoView(selector) {
+  const scroll = document.querySelector(selector);
+  scroll.scrollIntoView({ behavior: 'smooth' });
+}
