@@ -1,13 +1,9 @@
 'use strict';
-// 오류 사용시 오류메시지 출력
 
 // Navbar Transparent, Logo Reactive
 const navbar = document.querySelector('#navbar');
-// navbar 요소 선택
 const logo = document.querySelector('.navbar__img');
-//navbar__img 요소 선택
-const homeHeight = home.getBoundingClientRect().height;
-// home의 padding과 border 포함한 height
+const homeHeight = home.getBoundingClientRect().height - 100;
 window.addEventListener('scroll', () => {
   if (window.scrollY > homeHeight) {
     navbar.classList.add('navbar--dark');
@@ -16,4 +12,16 @@ window.addEventListener('scroll', () => {
     navbar.classList.remove('navbar--dark');
     logo.classList.remove('reactive');
   }
+});
+
+// 메뉴 선택시 해당 영역 이동
+const menu = document.querySelector('.navbar__menu');
+menu.addEventListener('click', (event) => {
+  const target = event.target;
+  const link = target.dataset.link;
+  if (link == null) {
+    return;
+  }
+  const scroll = document.querySelector(link);
+  scroll.scrollIntoView({ behavior: 'smooth' });
 });
