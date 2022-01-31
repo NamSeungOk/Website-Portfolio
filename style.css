@@ -151,20 +151,22 @@ ul {
   background-color: var(--color-medium-blue);
 }
 
-.navbar__img.reactive {
+.logo__img.reactive {
   content: url(imgs/Favicon_Reactive.png);
 }
 
 .navbar__logo {
   display: flex;
-  /* 수평 정렬 */
   align-items: center;
-  /* 수직 중앙 정렬 */
+  cursor: pointer;
+}
+
+.logo__content {
   font-size: var(--font-medium);
   font-weight: var(--weight-bold);
 }
 
-.navbar__img {
+.logo__img {
   width: 60px;
   height: 60px;
   margin-right: 15px;

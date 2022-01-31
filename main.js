@@ -1,8 +1,9 @@
 'use strict';
 
+// Navbar
 // Navbar Transparent, Logo Reactive
 const navbar = document.querySelector('#navbar');
-const logo = document.querySelector('.navbar__img');
+const logo = document.querySelector('.logo__img');
 const homeHeight = home.getBoundingClientRect().height - 100;
 window.addEventListener('scroll', () => {
   if (window.scrollY > homeHeight) {
@@ -25,7 +26,18 @@ menu.addEventListener('click', () => {
   scrollIntoView(link);
 });
 
-// Home "Contact Me" 버튼 클릭시 Contact 영역으로 이동
+// 로고 선택시 Navbar 영역으로 이동
+const logoButton = document.querySelector('.navbar__logo');
+logoButton.addEventListener('click', () => {
+  const target = event.target;
+  const link = target.dataset.link;
+  scrollIntoView(link);
+});
+
+// ------------------------------------------------------------------------------------
+
+// Home
+// "Contact Me" 버튼 클릭시 Contact 영역으로 이동
 const contactButton = document.querySelector('.home__contact');
 contactButton.addEventListener('click', () => {
   scrollIntoView('#footer');

@@ -29,14 +29,17 @@
   <body>
     <!-- Navbar -->
     <nav id="navbar">
-      <a class="navbar__logo" href="#">
-        <img
-          class="navbar__img"
-          alt="새로고침"
-          src="imgs/favicon3.png"
-        />
-        <span>SW</span>
-      </a>
+      <ul class="navbar__logo">
+        <li>
+          <img
+            class="logo__img"
+            data-link="#home"
+            alt="새로고침"
+            src="imgs/favicon3.png"
+          />
+        </li>
+        <li class="logo__content" data-link="#home">SW</li>
+      </ul>
       <ul class="navbar__menu">
         <li class="navbar__menu__item active" data-link="#home">
           Home
