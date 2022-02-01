@@ -1,7 +1,6 @@
 'use strict';
 
 // Navbar
-
 // Navbar Transparent, Logo Reactive
 const navbar = document.querySelector('#navbar');
 const logo = document.querySelector('.logo__img');
@@ -38,7 +37,6 @@ logoButton.addEventListener('click', () => {
 // ------------------------------------------------------------------------------------
 
 // Home
-
 // "Contact Me" 버튼 클릭시 Footer 영역으로 이동
 const homeButton = document.querySelector('.home__contact');
 homeButton.addEventListener('click', () => {
@@ -70,8 +68,7 @@ homeButton.addEventListener('mouseleave', () => {
 // ------------------------------------------------------------------------------------
 
 // Work
-
-// Category Filtering + Animation
+// Tab Filtering + Animation
 const tabBtn = document.querySelector('.work__tab');
 const work = document.querySelectorAll('.project');
 const workContainer = document.querySelector('.work__project');
@@ -82,6 +79,17 @@ tabBtn.addEventListener('click', () => {
   if (filter == null) {
     return;
   }
+
+  // 이전 Tab Active는 제거하고 클릭된 아이템에 Active 추가하기
+  const active = document.querySelector('.tab__btn.active');
+  active.classList.remove('active');
+  const target =
+    event.target.nodeName === 'BUTTON'
+      ? event.target
+      : event.target.parentNode;
+  target.classList.add('active');
+
+  // Tab Animation
   workContainer.classList.add('anim-out');
   workContainer.addEventListener('animationend', () => {
     work.forEach((project) => {
@@ -94,6 +102,7 @@ tabBtn.addEventListener('click', () => {
     workContainer.classList.remove('anim-out');
   });
 });
+
 // ------------------------------------------------------------------------------------
 
 // 스크롤시 일정 영역부터 "topBtn" 버튼 보이게

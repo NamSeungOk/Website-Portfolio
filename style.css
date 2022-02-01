@@ -122,7 +122,6 @@ ul {
   text-align: center;
   border-top: thick double var(--color-dark-white);
   padding: 8rem;
-  /* 줄어드는 웹 브라우저의 크기에 맞춰 요소의 너비도 자동으로 줄도록 (반응형) */
 }
 
 .section__container {
@@ -130,24 +129,21 @@ ul {
   margin: auto;
 }
 
+/* ------------------------------------------------------------------ */
+
 /* Navbar */
 #navbar {
   display: flex;
-  /* 수평 정렬 */
   justify-content: space-between;
-  /* 박스 간격 떨어지게 */
   align-items: center;
-  /* 수직 중앙 정렬 */
   padding: 1.6rem;
   position: fixed;
-  /* 스크롤시 주어진 위치에 고정 (위치값 필수 지정) */
-  width: 100%;
   /* 부모 너비의 100% */
+  width: 100%;
   background-color: transparent;
-  /* 투명색 */
   color: var(--color-white);
-  z-index: 1;
   /* 배치 순서 결정, position이 static이 아닌 것만 적용 가능 */
+  z-index: 1;
   transition: all 300ms cubic-bezier(0.94, 0.09, 0.93, 0.06);
 }
 
@@ -178,50 +174,43 @@ ul {
 
 .navbar__menu {
   display: flex;
-  /* 수평정렬 */
 }
 
 .navbar__menu__item {
   padding: 0.8rem 1.2rem;
   margin: 0 0.4rem;
   cursor: pointer;
-  /* 아이템에 커서 올리면 손 모양 */
   font-size: var(--font-regular);
-}
-
-.navbar__menu__item.active {
-  border: 0.2rem solid var(--color-white);
+  /* 텍스트 춤추는 것 방지 위해 transparent 지정 */
+  border: 0.2rem solid transparent;
   border-radius: var(--size-border-radius);
 }
 
 .navbar__menu__item:hover {
+  border-color: var(--color-white);
   background-color: var(--color-dark-pink);
-  border-radius: var(--size-border-radius);
 }
 
 /* navbar__toggle */
 .navbar__toggle {
   position: absolute;
-  /* 기존 위치에서 빠져나오게 */
   right: 3.2rem;
   top: 3rem;
   font-size: var(--font-medium);
   color: var(--color-white);
+  /* opacity는 안보여도 커서 올리면 클릭이 되기 때문에 사용안했음 */
   display: none;
-  /* 평소에는 안보이게 */
-  /* opacity(투명도)는 안보여도 커서 올리면 클릭이 되기 때문에 사용안했음 */
 }
+
+/* ------------------------------------------------------------------ */
 
 /* Home */
 #home {
-  background: url('imgs/Home/background.png') center/cover;
-  /* 백그라운드 이미지 지정 */
   /* 웹 페이지가 늘어나면 이미지도 맞춰서 중앙 부분이 늘어나게*/
+  background: url('imgs/Home/background.png') center/cover;
   padding: 8rem;
   text-align: center;
-  /* 중간 정렬 */
   border-top: thick double var(--color-dark-white);
-  /* 맨 윗부분 굵기 스타일 thick double 색상 dark-white */
 }
 
 .home__profile {
@@ -229,7 +218,6 @@ ul {
   height: 30rem;
   /* 이미지 너비, 높이 300px */
   border-radius: 40%;
-  /* 이미지 40%만큼 동그랗게 */
   border: 0.3rem solid var(--color-light-white);
 }
 
@@ -247,8 +235,9 @@ ul {
   border: 0.3rem solid var(--color-dark-white);
   border-radius: 2rem;
   outline: 0.4rem dashed var(--color-light-white);
-  /* 아웃라인(굵기 외부) 4px 스타일 dashed 색상 light-white */
 }
+
+/* ------------------------------------------------------------------ */
 
 /* About */
 #about {
@@ -257,24 +246,19 @@ ul {
 
 .about__skack {
   display: flex;
-  /* 수평 정렬 */
   justify-content: space-between;
-  /* 요소 사이 공간 부여 */
   margin: 6rem 0;
 }
 
 .stack__icon {
   width: 18rem;
   height: 18rem;
-  /* 컨테이너 너비, 높이 180px */
-  line-height: 8rem;
   /* 아이콘 80px 위치에서 수직 정렬 */
+  line-height: 8rem;
   font-size: 6rem;
-  /* 아이콘 크기 60px  */
   padding: 2rem;
   border-radius: 50%;
   outline: 0.4rem dashed var(--color-medium-blue);
-  /* outline 4px, 스타일 dashed */
   margin-bottom: 1.6rem;
   color: var(--color-sky-blue);
 }
@@ -282,36 +266,29 @@ ul {
 .stack__img {
   width: 18rem;
   height: 18rem;
-  /* 컨테이너 너비, 높이 180px */
-  line-height: 18rem;
   /* 아이콘 180px 위치에서 수직 정렬 */
+  line-height: 18rem;
   padding: 2rem;
   border-radius: 50%;
   outline: 0.4rem dashed var(--color-medium-blue);
-  /* outline 4px, 스타일 dashed */
   margin-bottom: 1.6rem;
 }
 
 .stack__img__logo {
   width: 7rem;
   height: 7rem;
-  /* 기술자격 이미지 너비, 높이 70px */
 }
 
 .stack__icon i {
-  transition: all 400ms cubic-bezier(0.88, 0.66, 1, 0.31);
   /* 1s=1000ms */
-  /* 0.4초동안 모든 요소에 cubic-bezier만큼 애니메이션 적용 */
-  /* 커서 떼도 애니메이션 유지 위해 i:hover 안에 안넣음 */
+  /* 커서 떼도 애니메이션 유지 위해 hover 안에 안넣음 */
+  transition: all 400ms cubic-bezier(0.88, 0.66, 1, 0.31);
 }
 
 .stack__icon i:hover {
   color: var(--color-dark-pink);
   cursor: pointer;
-  /* 아이템에 커서 올리면 손 모양 나오게 */
   transform: scale(2) rotate(360deg);
-  /* 아이템에 커서  올리면 크기는 2배 커지면서
-  360도 회전 */
 }
 
 .stack__title,
@@ -324,14 +301,12 @@ ul {
 }
 
 .about__school {
+  /* inline-flex : inline 형식으로 수평 정렬 */
   display: flex;
-  /* 수평 정렬 */
-  /* inline-flex는 inline 형식으로 수평 정렬 */
-  align-items: center;
-  /* flex 요소 교차축 중앙 정렬 (1줄) */
   /* align-content : flex 요소 교차축 정렬 (2줄) */
-  flex-basis: 33.3%;
+  align-items: center;
   /* 공간 배분하기 전 기본 너비 33.3%씩 설정 */
+  flex-basis: 33.3%;
 }
 
 .school__logo {
@@ -357,6 +332,8 @@ ul {
   font-size: var(--font-micro);
 }
 
+/* ------------------------------------------------------------------ */
+
 /* Skill */
 #skill {
   background-color: var(--color-light-grey);
@@ -364,7 +341,6 @@ ul {
 
 .skillset {
   display: flex;
-  /* 수평 정렬 */
   color: var(--color-light-white);
   margin-top: 2rem;
   padding: 2rem 4rem;
@@ -376,41 +352,35 @@ ul {
 }
 
 .skillset__left {
-  flex-basis: 60%;
   /* 부모 너비의 60%만큼 차지 */
+  flex-basis: 60%;
   background-color: var(--color-bluish-green);
-  /* 청록색 */
 }
 
 .graph {
   display: flex;
-  /* 수평 정렬 */
+  /* 요소 사이에 동일한 간격 주면서 첫번째와 마지막 요소는 여백 */
   justify-content: space-around;
-  /* 요소 사이에 동일한 간격 주면서 첫번째와 마지막 요소는 여백 있게 */
 }
 
 .graph__bar {
   position: relative;
   height: 20rem;
-  /* 그래프 높이 200px */
   width: 3rem;
-  /* 그래프 너비 30px */
   background-color: var(--color-light-grey);
-  margin: auto;
   /* block요소에서 text-align 사용 위해 */
+  margin: auto;
   text-align: center;
-  /* 중앙 정렬 */
   border-radius: var(--size-border-radius);
 }
 
 .graph__value {
+  /* position이 static이 아닌 부모 요소를 기준 */
   position: absolute;
-  /* position이 static이 아닌 부모 요소 기준 */
-  width: 100%;
   /* 부모 요소 너비의 100% */
+  width: 100%;
   background-color: var(--color-dark-grey);
   bottom: 0;
-  /* 위치 아래 0부터 시작 */
 }
 
 .graph__title,
@@ -419,17 +389,17 @@ ul {
 }
 
 .skillset__right {
-  flex-basis: 40%;
   /* 부모 너비의 40%만큼 차지 */
+  flex-basis: 40%;
   background-color: var(--color-gunmetal);
-  /* 청회색 */
 }
 
 .tool li {
   padding: 1.5rem 0;
-  /* tool__list li 요소 padding 상하 15px 좌우 0 */
   font-size: var(--font-micro);
 }
+
+/* ------------------------------------------------------------------ */
 
 /* work__tab */
 #work {
@@ -450,7 +420,7 @@ ul {
 
 .tab__btn.active,
 .tab__btn:hover {
-  /* 아이템이 active하거나 커서 올라가면 스타일 변경 */
+  /* tab__btn이 active하거나 커서 올라가면 스타일 변경 */
   color: var(--color-indigo);
   font-weight: var(--weight-bold);
   background-color: var(--color-dark-blue);
@@ -461,7 +431,6 @@ ul {
   /* tab__btn이 active인 상태의 work__count와
      tab__btn에 커서 올라갔을 때 work__count */
   opacity: 1;
-  /* 투명도 1 */
   top: 0;
   left: 0;
 }
@@ -470,18 +439,17 @@ ul {
   border: 0.3rem solid var(--color-purple);
   border-radius: var(--size-border-radius);
   color: var(--color-ivory);
+  /* span은 inline요소라서 width,height 지정 못하기 때문에
+    inline-block으로 설정*/
   display: inline-block;
-  /* span은 inline요소라서 박스 크기를 꽉 채우기 때문에
-  inline-block으로 변경*/
   width: 2.5rem;
   height: 3rem;
-  line-height: 3rem;
   /* line-height은 한줄만 수직 정렬할 때 사용 */
+  line-height: 3rem;
   position: relative;
   left: -18rem;
   top: -8rem;
   opacity: 0;
-  /* 투명도 0 */
   transition: all 300ms cubic-bezier(0.95, 0.13, 0.61, 0.58);
 }
 
@@ -491,6 +459,7 @@ ul {
 }
 
 @keyframes animOut {
+  /* 0(from) ~ 100(to) */
   from {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -504,13 +473,13 @@ ul {
 /* work__project */
 .work__project {
   display: flex;
-  flex-wrap: wrap;
   /* 브라우저 사이즈가 줄어들면 아이템 사이즈는 안줄이고 다음 라인으로 넘김*/
+  flex-wrap: wrap;
   justify-content: center;
-  /* 중앙 정렬 */
 }
 
 .work__project.anim-out {
+  /* keyframes 이름 */
   animation: animOut 300ms ease-out;
 }
 
@@ -519,47 +488,38 @@ ul {
   height: 25rem;
   margin: 0.5rem;
   background-color: var(--color-light-grey);
-  position: relative;
   /* 자식요소인 project__description에 absolute 지정 위해 */
+  position: relative;
   display: flex;
   justify-content: center;
-  /* 수평 중앙 정렬 */
   align-items: center;
-  /* 수직 중앙 정렬 */
 }
 
 .project__img {
-  max-width: 100%;
-  /* 부모 너비의 100%만큼 */
-  max-height: 100%;
-  /* 부모 높이의 100%만큼 */
+  /* 부모 너비, 높이의 100%만큼 */
   /* 조상인 work__project가 flex라서 가능 */
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .project__description {
-  position: absolute;
-  /* project__description의 부모 요소에서 빠져나오기 위해 */
   /* relative는 원래 자리 차지하면서 이동 */
-  /* 근접한 부모요소중 position이 static이 아닌 부모요소 기준*/
+  position: absolute;
   top: 0;
+  /* 부모 요소의 너비, 높이 100%만큼 */
   width: 100%;
   height: 100%;
-  /* 부모 요소의 너비, 높이 100%만큼 */
   background-color: var(--color-dark-pink);
   display: flex;
-  /* 수평 정렬 */
   flex-direction: column;
-  /* 아이템 열로 배치 */
   justify-content: center;
-  /* 중심축이 열, 중간 정렬 */
   opacity: 0;
-  /* 투명도 0 */
   transform: translatex(200rem);
   transition: all 300ms cubic-bezier(0.9, 0.02, 0.49, 0.99);
 }
 
 .project:hover .project__description {
-  /* .project에 커서 올라오면 .project__description */
+  /* project에 커서 올라올 때 project__description */
   opacity: 0.9;
   transform: translateX(0);
 }
@@ -569,10 +529,12 @@ ul {
   /* project__description h3 다음에 올 것 적기 */
   /* content 속성 필수 */
   content: '- - - - - - - - - - - - - - - - ';
-  display: block;
   /* 한줄씩 들어가도록 하기 위해 block 지정 */
+  display: block;
   margin-top: 1rem;
 }
+
+/* ------------------------------------------------------------------ */
 
 /* Footer */
 #footer {
@@ -613,24 +575,26 @@ ul {
   background-color: var(--color-dark-white);
   border-radius: var(--size-border-radius);
   opacity: 0;
-  pointer-events: none;
   /* 안보일때는 클릭 불가능 */
+  pointer-events: none;
   transition: all 300ms cubic-bezier(0.89, 0.15, 0.9, 0.19);
 }
 
 .top__btn.visible {
   opacity: 1;
-  pointer-events: auto;
   /* 보일때는 클릭 가능 */
+  pointer-events: auto;
 }
+
+/* ------------------------------------------------------------------ */
 
 /* Responsive */
 @media screen and (max-width: 800px) {
   /* media 쿼리가 800px 이하일 때 보여지는 것 */
   /* Navbar */
   .navbar__toggle {
-    display: block;
     /* none으로 설정한 것을 다시 보이게 */
+    display: block;
   }
 
   #navbar {
@@ -640,8 +604,8 @@ ul {
   }
 
   .navbar__menu {
-    flex-direction: column;
     /* media 안에서는 display : flex는 상속됨 */
+    flex-direction: column;
     width: 100%;
     text-align: center;
     margin-top: 1.5rem;
@@ -650,8 +614,8 @@ ul {
 
   /* About */
   .about__skack {
-    flex-direction: column;
     /* display : flex는 상속 */
+    flex-direction: column;
     align-items: center;
   }
 
