@@ -1,6 +1,7 @@
 'use strict';
 
 // Navbar
+
 // Navbar Transparent, Logo Reactive
 const navbar = document.querySelector('#navbar');
 const logo = document.querySelector('.logo__img');
@@ -37,6 +38,7 @@ logoButton.addEventListener('click', () => {
 // ------------------------------------------------------------------------------------
 
 // Home
+
 // "Contact Me" 버튼 클릭시 Footer 영역으로 이동
 const homeButton = document.querySelector('.home__contact');
 homeButton.addEventListener('click', () => {
@@ -63,6 +65,29 @@ homeButton.addEventListener('mouseenter', () => {
 
 homeButton.addEventListener('mouseleave', () => {
   homeButton.style.opacity = 1 - window.scrollY / home_Height;
+});
+
+// ------------------------------------------------------------------------------------
+
+// Work
+
+// Category Filtering
+const tabBtn = document.querySelector('.work__tab');
+const work = document.querySelectorAll('.project');
+tabBtn.addEventListener('click', () => {
+  const filter =
+    event.target.dataset.filter ||
+    event.target.parentNode.dataset.filter;
+  if (filter == null) {
+    return;
+  }
+  work.forEach((project) => {
+    if (filter === 'all' || project.dataset.type.includes(filter)) {
+      project.classList.remove('visible');
+    } else {
+      project.classList.add('visible');
+    }
+  });
 });
 
 // ------------------------------------------------------------------------------------
