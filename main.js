@@ -65,6 +65,32 @@ homeButton.addEventListener('mouseleave', () => {
   homeButton.style.opacity = 1 - window.scrollY / home_Height;
 });
 
+// ------------------------------------------------------------------------------------
+
+// 스크롤시 일정 영역부터 "topBtn" 버튼 보이게
+const topBtn = document.querySelector('.top__btn');
+const about = document.querySelector('#about');
+const aboutHeight = about.getBoundingClientRect().height;
+document.addEventListener('scroll', () => {
+  if (window.scrollY > aboutHeight / 2) {
+    topBtn.classList.add('visible');
+  } else {
+    topBtn.classList.remove('visible');
+  }
+});
+
+// "topBtn" 버튼 클릭하면 4초 뒤에 클릭 가능
+const btnSetTime = () => {
+  window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  topBtn.removeEventListener('click', btnSetTime);
+  setTimeout(() => {
+    topBtn.addEventListener('click', btnSetTime);
+  }, 4000);
+};
+
+// "topBtn" 버튼 클릭시 최상단 이동
+topBtn.addEventListener('click', btnSetTime);
+
 // Common Method
 function scrollIntoView(selector) {
   const scroll = document.querySelector(selector);
