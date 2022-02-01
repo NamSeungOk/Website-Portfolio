@@ -56,6 +56,15 @@ document.addEventListener('scroll', () => {
   }
 });
 
+// "Contact Me" 버튼 클릭시 투명도 조절
+homeButton.addEventListener('mouseenter', () => {
+  homeButton.style.opacity = 1;
+});
+
+homeButton.addEventListener('mouseleave', () => {
+  homeButton.style.opacity = 1 - window.scrollY / home_Height;
+});
+
 // Common Method
 function scrollIntoView(selector) {
   const scroll = document.querySelector(selector);
