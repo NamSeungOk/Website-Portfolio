@@ -40,30 +40,23 @@
 
 /* Universal tags */
 * {
+  /* 패딩을 줬을 때  width와 height가 그 패딩을 포함해도 동일한
+  높이와 너비가 되도록 */
   box-sizing: border-box;
-  /* 패딩을 줬을 때  width와 height가 그 패딩을 포함해도 
-  동일한 높이와 넓이가 되도록*/
 }
 
 button {
   background-color: transparent;
-  /* 버튼 배경색 제거 */
   cursor: pointer;
-  /* 커서 올리면 손 모양 나오게 */
   border: none;
-  /* 아이템 굵기 제거 */
   outline: none;
-  /* 아이템 아웃라인(굵기 외부, 너비는 레이아웃 관여 안함) 제거 */
-  font-family: 'Roboto', sans-serif;
-  /* button 폰트 정의 */
   /* button,input 등 form 태그는 body에서 정의한 폰트 CSS값 상속 x */
+  font-family: 'Roboto', sans-serif;
 }
 
 button:hover {
   background: var(--color-dark-pink);
-  /* 커서 올리는 아이템 백그라운드 색상 다크 분홍으로 변경 */
   border-radius: var(--size-border-radius);
-  /* 굵기는 40px만큼 깎아서 보이게 */
 }
 
 /* Typography */
@@ -411,6 +404,8 @@ ul {
 }
 
 .tab__btn {
+  /* 자식 work__count에 absolute 지정 */
+  position: relative;
   border: 0.2rem solid var(--color-black);
   border-radius: var(--size-border-radius);
   font-size: var(--font-regular);
@@ -432,7 +427,7 @@ ul {
      tab__btn에 커서 올라갔을 때 work__count */
   opacity: 1;
   top: 0;
-  left: 0;
+  right: 0.4rem;
 }
 
 .work__count {
@@ -446,9 +441,10 @@ ul {
   height: 3rem;
   /* line-height은 한줄만 수직 정렬할 때 사용 */
   line-height: 3rem;
-  position: relative;
-  left: -18rem;
-  top: -8rem;
+  /* 부모인 tab__btn에 relative지정 */
+  position: absolute;
+  top: -2rem;
+  right: -2rem;
   opacity: 0;
   transition: all 300ms cubic-bezier(0.95, 0.13, 0.61, 0.58);
 }
@@ -558,12 +554,6 @@ ul {
   color: var(--color-white);
 }
 
-.contact {
-  margin-bottom: 2rem;
-  color: var(--color-white);
-  font-size: var(--font-medium);
-}
-
 .footer__link i {
   font-size: var(--font-large);
   color: var(--color-medium-grey);
@@ -600,20 +590,33 @@ ul {
 /* ------------------------------------------------------------------ */
 
 /* Responsive */
-@media screen and (max-width: 768px) {
-  /* media 쿼리가 800px 이하일 때 보여지는 것 */
+@media screen and (max-width: 76.8rem) {
+  /* media 쿼리가 768px 이하일 때 보여지는 것 */
+
+  /* Font size */
+  :root {
+    --font-large: 3rem;
+    --font-medium: 1.8rem;
+    --font-regular: 1.6rem;
+    --font-small: 1.4rem;
+    --font-micro: 1.2rem;
+  }
 
   /* Navbar */
   .navbar__toggle {
     /* none으로 설정한 것을 다시 보이게 */
     display: block;
+    font-size: var(--font-large);
   }
 
   #navbar {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    background-color: var(--color-medium-blue);
+  }
+
+  .logo__content {
+    font-size: 2.8rem;
   }
 
   @keyframes fade-in {
@@ -637,18 +640,36 @@ ul {
   .navbar__menu.open {
     display: block;
     animation: fade-in 1.5s;
+    background-color: var(--color-medium-blue);
   }
 
   /* Home */
+  #home {
+    padding: 8rem 2rem;
+  }
+
   .home {
     margin-top: 2rem;
   }
 
+  .home__contact {
+    margin: 2rem;
+  }
+
   /* About */
+  #about {
+    padding: 8rem 2rem;
+  }
+
+  .about__subtitle {
+    text-align: justify;
+  }
+
   .about__skack {
     /* display : flex는 상속 */
     flex-direction: column;
     align-items: center;
+    margin: 2.5rem 0;
   }
 
   .stack {
@@ -658,15 +679,34 @@ ul {
   /* Skill */
   #skill {
     background-color: var(--color-light-yellow);
+    padding: 8rem 1.5rem;
+  }
+
+  #skill p {
+    text-align: center;
   }
 
   .skillset {
     flex-direction: column;
+    margin-top: 1rem;
+  }
+
+  .graph {
+    margin-bottom: 0.5rem;
+  }
+
+  .graph li {
+    width: 100%;
   }
 
   /* Work */
   #work {
     background-color: var(--color-ivory);
+    padding: 8rem 1rem;
+  }
+
+  .work__tab {
+    margin: 1rem;
   }
 
   .tab__btn {
@@ -676,11 +716,39 @@ ul {
     font-weight: var(--weight-bold);
   }
 
+  .tab__btn.active .work__count {
+    right: 9rem;
+  }
   .work__count {
     color: var(--color-black);
   }
 
   .project {
     flex-grow: 1;
+  }
+
+  /* Footer */
+  #footer {
+    padding: 8rem 1rem;
+  }
+
+  .contact__phone,
+  .contact__email {
+    color: var(--color-white);
+    font-size: var(--font-medium);
+    font-weight: var(--weight-medium);
+    margin-bottom: 2rem;
+  }
+
+  .contact__phone {
+    transform: translateX(-2.3rem);
+  }
+
+  /* topBtn */
+  .top__btn {
+    width: 4rem;
+    height: 4rem;
+    bottom: 1rem;
+    right: 1.5rem;
   }
 }
