@@ -24,6 +24,7 @@ menu.addEventListener('click', () => {
     return;
   }
   scrollIntoView(link);
+  menu.classList.remove('open');
 });
 
 // 로고 선택시 Navbar 영역으로 이동
@@ -32,6 +33,12 @@ logoButton.addEventListener('click', () => {
   const target = event.target;
   const link = target.dataset.link;
   scrollIntoView(link);
+});
+
+// Navbar Toggle Button
+const navbarToggle = document.querySelector('.navbar__toggle');
+navbarToggle.addEventListener('click', () => {
+  menu.classList.toggle('open');
 });
 
 // ------------------------------------------------------------------------------------
