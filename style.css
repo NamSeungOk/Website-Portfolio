@@ -8,13 +8,16 @@
   --color-dark-pink: #ff6863;
   --color-medium-blue: #63869d;
   --color-sky-blue: #008dc7;
+  /* 사용 */
   --color-light-grey: #d3d3d3;
   --color-medium-grey: #abaeb0;
   --color-heavy-grey: #7d7a7a;
   --color-dark-grey: #4d4d4d;
+  /* 사용 */
   --color-gunmetal: #4f6b7e;
   --color-bluish-green: #455e62;
   --color-indigo: #00007a;
+  /* 사용 */
   --color-purple: #8300f0;
   --color-light-yellow: #fde3b5;
   --color-medium-yellow: #fbd084;
@@ -237,7 +240,11 @@ ul {
 
 /* About */
 #about {
-  background-color: var(--color-ivory);
+  background: linear-gradient(
+    309deg,
+    rgba(201, 214, 255, 1) 0%,
+    rgba(226, 226, 226, 1) 84%
+  );
 }
 
 .about__skack {
@@ -254,7 +261,7 @@ ul {
   font-size: 6rem;
   padding: 2rem;
   border-radius: 50%;
-  outline: 0.4rem dashed var(--color-medium-blue);
+  outline: 0.4rem dashed var(--color-dark-grey);
   margin-bottom: 1.6rem;
   color: var(--color-sky-blue);
 }
@@ -266,13 +273,18 @@ ul {
   line-height: 18rem;
   padding: 2rem;
   border-radius: 50%;
-  outline: 0.4rem dashed var(--color-medium-blue);
+  outline: 0.4rem dashed var(--color-dark-grey);
   margin-bottom: 1.6rem;
 }
 
 .stack__img__logo {
   width: 7rem;
   height: 7rem;
+  transition: all 400ms cubic-bezier(0.88, 0.66, 1, 0.31);
+}
+
+.stack:hover img {
+  transform: scale(2) rotate(360deg);
 }
 
 .stack__icon i {
@@ -282,7 +294,7 @@ ul {
 }
 
 .stack__icon i:hover {
-  color: var(--color-dark-pink);
+  color: var(--color-indigo);
   cursor: pointer;
   transform: scale(2) rotate(360deg);
 }
@@ -315,26 +327,19 @@ ul {
   text-align: left;
 }
 
-.school__name,
-.school_period {
-  color: var(--color-dark-grey);
-}
-
 .school__name {
   font-size: var(--font-regular);
+  color: var(--color-dark-grey);
 }
 
 .school__period {
   font-size: var(--font-micro);
+  color: var(--color-dark-grey);
 }
 
 /* ------------------------------------------------------------------ */
 
 /* Skill */
-#skill {
-  background-color: var(--color-light-grey);
-}
-
 .skillset {
   display: flex;
   color: var(--color-light-white);
@@ -399,7 +404,11 @@ ul {
 
 /* work__tab */
 #work {
-  background-color: var(--color-medium-grey);
+  background: linear-gradient(
+    309deg,
+    rgba(201, 214, 255, 1) 0%,
+    rgba(226, 226, 226, 1) 84%
+  );
 }
 
 .work__tab {
