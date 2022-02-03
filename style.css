@@ -557,6 +557,19 @@ ul {
   color: var(--color-white);
 }
 
+.contact__phone,
+.contact__email {
+  color: var(--color-white);
+}
+
+.contact__phone {
+  transform: translateX(-2.5rem);
+}
+
+.contact__email {
+  margin-bottom: 2rem;
+}
+
 .footer__link i {
   font-size: var(--font-large);
   color: var(--color-medium-grey);
