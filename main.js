@@ -31,7 +31,7 @@ menu.addEventListener('click', () => {
 const logoButton = document.querySelector('.navbar__logo');
 logoButton.addEventListener('click', () => {
   const target = event.target;
-  const link = target.dataset.link;
+  const link = target.dataset.type;
   scrollIntoView(link);
 });
 
@@ -138,8 +138,76 @@ topBtn.addEventListener('click', btnSetTime);
 
 // ------------------------------------------------------------------------------------
 
-// Common Method
+// 모든 Section 요소를 배열 형태로 sectionIds에 저장
+const sectionIds = ['#home', '#about', '#skill', '#work', '#footer'];
+// Section의 모든 요소들을 새로운 DOM으로 변환
+const sections = sectionIds.map((id) => document.querySelector(id));
+// Nav의 메뉴 아이템 모든 요소들을 새로운 DOM으로 변환
+const navItems = sectionIds.map((id) =>
+  document.querySelector(`[data-link="${id}"]`)
+);
+
+// selectedNavItem 변수에 navItems의 첫번째 요소 저장
+let selectedNavItem = navItems[0];
+let selectedNavIndex = 0;
+
+// 함수 생성
+function selectNavItem(selected) {
+  selectedNavItem.classList.remove('active');
+  selectedNavItem = selected;
+  selectedNavItem.classList.add('active');
+}
+
 function scrollIntoView(selector) {
   const scroll = document.querySelector(selector);
   scroll.scrollIntoView({ behavior: 'smooth' });
+  selectNavItem(navItems[sectionIds.indexOf(selector)]);
 }
+
+// IntersectionObserver Option
+const observerOption = {
+  root: null, // viewport 기준
+  rootMargin: '0px', // 0px 기준
+  threshold: 0.3, // 아이템이 얼만큼 보여질 때 콜백함수를 호출할지
+};
+
+// IntersectionObserver Callback Function
+const observerCallback = (entries, observer) => {
+  entries.forEach((entry) => {
+    if (!entry.intersecting && entry.intersectionRatio > 0) {
+      // 인덱스 생성
+      const index = sectionIds.indexOf(`#${entry.target.id}`);
+      // 아이템이 윗 화면 밖으로 나가면 이후 인덱스 지정
+      // 아이템이 아래 화면 밖으로 나가면 이전 인덱스 지정
+      if (entry.boundingClientRect.y < 0) {
+        selectedNavIndex = index + 1;
+      } else {
+        selectedNavIndex = index - 1;
+      }
+    }
+  });
+};
+
+// IntersectionObserver
+const observer = new IntersectionObserver(
+  observerCallback,
+  observerOption
+);
+
+// Section 관찰
+sections.forEach((section) => observer.observe(section));
+
+window.addEventListener('wheel', () => {
+  selectNavItem(navItems[selectedNavIndex]);
+  if (window.scrollY === 0) {
+    selectedNavIndex = 0;
+  } else if (
+    window.scrollY + window.innerHeight ===
+    document.body.clientHeight
+  ) {
+    selectedNavIndex = navItems.length - 1;
+  }
+  selectNavItem(navItems[selectedNavIndex]);
+});
+
+// ------------------------------------------------------------------------------------

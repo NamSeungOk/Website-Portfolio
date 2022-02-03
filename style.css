@@ -175,8 +175,11 @@ ul {
   cursor: pointer;
   font-size: var(--font-regular);
   /* 텍스트 춤추는 것 방지 위해 transparent 지정 */
-  border: 0.2rem solid transparent;
   border-radius: var(--size-border-radius);
+}
+
+.navbar__menu__item.active {
+  border: 0.2rem solid var(--color-white);
 }
 
 .navbar__menu__item:hover {
@@ -590,7 +593,7 @@ ul {
 /* ------------------------------------------------------------------ */
 
 /* Responsive */
-@media screen and (max-width: 76.8rem) {
+@media screen and (max-width: 768px) {
   /* media 쿼리가 768px 이하일 때 보여지는 것 */
 
   /* Font size */
