@@ -3,6 +3,7 @@
   /* Color */
   --color-white: #ffffff;
   --color-light-white: #eeeeee;
+  /* 사용 */
   --color-dark-white: #bdbdbd;
   --color-ivory: #f2f0f0;
   --color-dark-pink: #ff6863;
@@ -10,6 +11,7 @@
   --color-sky-blue: #008dc7;
   /* 사용 */
   --color-light-grey: #d3d3d3;
+  /* 사용 */
   --color-medium-grey: #abaeb0;
   --color-heavy-grey: #7d7a7a;
   --color-dark-grey: #4d4d4d;
@@ -247,6 +249,10 @@ ul {
   );
 }
 
+#about h2 {
+  line-height: 4.5rem;
+}
+
 .about__skack {
   display: flex;
   justify-content: space-between;
@@ -304,6 +310,12 @@ ul {
   color: var(--color-dark-grey);
 }
 
+.stack__title {
+  font-size: var(--font-medium);
+  text-align: center;
+  font-weight: var(--weight-bold);
+}
+
 .stack__subtitle {
   font-size: var(--font-regular);
 }
@@ -340,6 +352,11 @@ ul {
 /* ------------------------------------------------------------------ */
 
 /* Skill */
+
+#skill p {
+  font-weight: var(--weight-bold);
+}
+
 .skillset {
   display: flex;
   color: var(--color-light-white);
@@ -362,6 +379,7 @@ ul {
   display: flex;
   /* 요소 사이에 동일한 간격 주면서 첫번째와 마지막 요소는 여백 */
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .graph__bar {
@@ -371,7 +389,6 @@ ul {
   background-color: var(--color-light-grey);
   /* block요소에서 text-align 사용 위해 */
   margin: auto;
-  text-align: center;
   border-radius: var(--size-border-radius);
 }
 
@@ -686,8 +703,9 @@ ul {
     padding: 8rem 2rem;
   }
 
-  .about__subtitle {
+  #about h2 {
     text-align: justify;
+    line-height: 2.5rem;
   }
 
   .about__skack {
@@ -703,7 +721,6 @@ ul {
 
   /* Skill */
   #skill {
-    background-color: var(--color-light-yellow);
     padding: 8rem 1.5rem;
   }
 
@@ -714,14 +731,11 @@ ul {
   .skillset {
     flex-direction: column;
     margin-top: 1rem;
+    min-width: 12rem;
   }
 
   .graph {
     margin-bottom: 0.5rem;
-  }
-
-  .graph li {
-    width: 100%;
   }
 
   /* Work */
