@@ -11,6 +11,8 @@
   --color-indigo: #00007a;
   --color-black: #000000;
   --color-purple: #8300f0;
+  --color-medium-yellow: #fbd084;
+  --color-dark-yellow: #f9be52;
   /* 사용 */
   --color-dark-white: #bdbdbd;
   --color-medium-blue: #63869d;
@@ -18,8 +20,6 @@
   --color-medium-grey: #abaeb0;
   --color-heavy-grey: #7d7a7a;
   --color-light-yellow: #fde3b5;
-  --color-medium-yellow: #fbd084;
-  --color-dark-yellow: #f9be52;
 
   /* Font size */
   --font-large: 4.8rem;
@@ -572,37 +572,36 @@ ul {
 
 /* Footer */
 #footer {
-  background-color: var(--color-heavy-grey);
-  color: var(--color-white);
+  background-color: var(--color-dark-grey);
 }
 
 .footer__comment,
-.footer__title {
-  color: var(--color-white);
-}
-
+.footer__title,
 .contact__phone,
 .contact__email {
   color: var(--color-white);
+}
+
+.contact__email,
+.contact__phone {
+  padding: 0.7rem 0;
+  word-wrap: break-word;
 }
 
 .contact__phone {
   transform: translateX(-2.5rem);
 }
 
-.contact__email {
-  margin-bottom: 2rem;
-}
-
 .footer__link i {
   font-size: var(--font-large);
-  color: var(--color-medium-grey);
+  color: var(--color-light-white);
   margin: 0 0.8rem;
+  transition: all 300ms ease-out;
 }
 
 .footer__link i:hover {
-  transform: scale(1.7) rotate(180deg);
-  color: var(--color-white);
+  transform: scale(1.7) rotate(360deg);
+  color: var(--color-medium-yellow);
 }
 
 .top__btn {
@@ -613,7 +612,7 @@ ul {
   height: 5rem;
   font-size: var(--font-medium);
   color: var(--color-black);
-  background-color: var(--color-dark-white);
+  background-color: var(--color-light-white);
   border-radius: var(--size-border-radius);
   opacity: 0;
   /* 안보일때는 클릭 불가능 */
@@ -625,6 +624,10 @@ ul {
   opacity: 1;
   /* 보일때는 클릭 가능 */
   pointer-events: auto;
+}
+
+.top__btn:hover {
+  background-color: var(--color-dark-yellow);
 }
 
 /* ------------------------------------------------------------------ */
@@ -761,14 +764,12 @@ ul {
 
   .contact__phone,
   .contact__email {
-    color: var(--color-white);
     font-size: var(--font-medium);
     font-weight: var(--weight-medium);
     margin-bottom: 2rem;
   }
 
   .contact__phone {
-    transform: translateX(-2.3rem);
   }
 
   /* topBtn */
@@ -777,5 +778,23 @@ ul {
     height: 4rem;
     bottom: 1rem;
     right: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  /* Work */
+  .tab__btn {
+    overflow: auto;
+  }
+
+  /* Home */
+  .home__profile {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Footer */
+  .contact__phone {
+    transform: translateX(0);
   }
 }
