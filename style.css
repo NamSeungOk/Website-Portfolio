@@ -141,7 +141,11 @@ ul {
 }
 
 #navbar.navbar--dark {
-  background-color: var(--color-medium-blue);
+  background: linear-gradient(
+    190deg,
+    rgba(189, 195, 199, 1) 0%,
+    rgba(44, 62, 80, 1) 84%
+  );
 }
 
 .logo__img.reactive {
@@ -198,6 +202,9 @@ ul {
   display: none;
 }
 
+.navbar__toggle:hover {
+  background-color: var(--color-dark-yellow);
+}
 /* ------------------------------------------------------------------ */
 
 /* Home */
@@ -680,10 +687,23 @@ ul {
     display: none;
   }
 
+  .navbar__menu__item {
+    color: var(--color-dark-grey);
+  }
+
+  .navbar__menu__item.active {
+    border: 0.3rem solid var(--color-black);
+    font-weight: var(--weight-bold);
+  }
+
   .navbar__menu.open {
     display: block;
     animation: fade-in 1.5s;
-    background-color: var(--color-medium-blue);
+    background: linear-gradient(
+      309deg,
+      rgba(201, 214, 255, 1) 0%,
+      rgba(226, 226, 226, 1) 84%
+    );
   }
 
   /* Home */
@@ -782,6 +802,11 @@ ul {
 }
 
 @media screen and (max-width: 320px) {
+  /* Navbar */
+  .navbar__menu.open {
+    overflow: auto;
+  }
+
   /* Work */
   .tab__btn {
     overflow: auto;
